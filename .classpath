@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="arrays"/>
+	<classpathentry kind="src" path="graphs"/>
+	<classpathentry kind="src" path="hashmaps"/>
+	<classpathentry kind="src" path="lists"/>
+	<classpathentry kind="src" path="recursion"/>
+	<classpathentry kind="src" path="sorting"/>
+	<classpathentry kind="src" path="stacks-queues"/>
+	<classpathentry kind="src" path="trees"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
