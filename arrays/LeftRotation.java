@@ -1,44 +1,29 @@
 import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
+
 
 public class LeftRotation {
 
-    // Completed rotLeft function.  O(n)
+    // Completed rotLeft function.
+	// O(n) time complexity.  Adds space complexity O(n)
     static int[] rotLeft(int[] a, int d) {
         int rotation = d%a.length;
         int[] b = new int[a.length];
-        //System.out.println("rotation: " + rotation);
         for (int index = 0; index < a.length; index++){
-            System.out.println("a index: " + index);
-            if (index - rotation >= 0){
-                b[index - rotation] = a[index];
-                System.out.println("b index: " + (index - rotation));
-            } 
-            else{
-                int overflow = rotation - index;
-                b[a.length - overflow] = a[index];
-                System.out.println("b index: " + (a.length - 1 - overflow));
-            }
+            if (index - rotation >= 0) b[index - rotation] = a[index];
+            else b[a.length - (rotation - index)] = a[index];
         }
         return b;
     }
 
-    // First attempt.  O(d*n)
+    // First attempt.  O(d*n) time complexity.
     // Less performant because it performs the assignment operation loop
     // within a rotation loop.
     /*static int[] rotLeft(int[] a, int d) {
         int temp;
         for (int i = 0; i < d; i++){
-            System.out.println("i: " + i);
             temp = a[0];
             for(int j = 0; j < a.length - 1; j++){
-                System.out.println("j: " + j);
-                System.out.println("a[j]: " + a[j]);
                 a[j] = a[j+1];
             }
             a[a.length - 1] = temp;
