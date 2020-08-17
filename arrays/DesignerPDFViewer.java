@@ -11,12 +11,12 @@ public class DesignerPDFViewer {
 
     // Complete the designerPdfViewer function below.
     static int designerPdfViewer(int[] h, String word) {
-    int height = 0;
-    for (char c : word.toCharArray()){
-        int charHeight = h[(Character.getNumericValue(c) - 10)];
-        height = (charHeight > height ? charHeight : height);
-    }
-    return word.length()*height;
+    	int height = 0;
+    	for (char c : word.toCharArray()){
+    		int charHeight = h[(Character.getNumericValue(c) - 10)];
+    		height = (charHeight > height ? charHeight : height);
+    	}
+    	return word.length()*height;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
