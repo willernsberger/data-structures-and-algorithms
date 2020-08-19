@@ -70,7 +70,6 @@ public class BFSShortReach {
                 graph.nodes.get(Integer.valueOf(u)).addEdge(new Edge(u, v));
                 graph.nodes.get(Integer.valueOf(v)).addEdge(new Edge(v, u)); 
             }
-
         }
         graph.start = scanner.nextInt();
         return graph;
@@ -81,14 +80,16 @@ public class BFSShortReach {
         Queue<Node> queue = new LinkedList<Node>();
         Node start = graph.nodes.get(Integer.valueOf(graph.start));
         start.distance = 0;
+        start.visited = true;
         queue.add(start);
         while(queue.peek() != null){
             Node node = queue.remove();
-            node.visited = true;
+            //node.visited = true;
             for(Edge e : node.edges){
                 Node adjacent = graph.nodes.get(e.destination);
                 if(adjacent.visited == false){
                     adjacent.distance = node.distance + 6;
+                    adjacent.visited = true;
                     queue.add(adjacent);
                 }
             }
