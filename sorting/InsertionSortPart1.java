@@ -6,7 +6,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class InsertionSortPart1 {
 
     // Complete the insertionSort1 function below.
     static void insertionSort1(int n, int[] arr) {
