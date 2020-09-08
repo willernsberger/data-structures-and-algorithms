@@ -6,12 +6,11 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-// A DFS solution to HackerRank practice problem Max Array Sum.
-// Illustrates the issue with call stack overflow in a DFS.
-// Will throw a call stack overflow error with a sufficiently large array length.
-// https://www.hackerrank.com/challenges/max-array-sum/problem
+//A BFS solution to HackerRank practice problem Max Array Sum.
+//Will fail to meet HackRank time limits with a sufficiently large array length.
+//https://www.hackerrank.com/challenges/max-array-sum/problem
 
-public class MaxArraySum {
+public class MaxSubsetSum {
 
     public static class Node{
         int pointer;
@@ -27,44 +26,36 @@ public class MaxArraySum {
         Node root = new Node();
         root.pointer = 0;
         root.value = 0;
-        max = DFS(root, arr);
 
-        return max;
-    }
+        Node node;
 
-    static int DFS(Node node, int[] arr){
-        int max = node.value;
-        int rightValue = 0;
-        int leftValue = 0;
+        //create a queue
+        List<Node> list = new ArrayList<Node>();
+        list.add(root);
+        while(list.isEmpty() != true){
+            //remove the first element in the queue
+            node = list.remove(0);
 
-        System.out.println("node.value: " + node.value);
-
-        //if we are at a leaf, return the value
-        if(node.pointer >= arr.length){
-            return max;
-        }
-        //if we are not at a leaf, create and traverse left
-            //create left
+            //if a leaf, evaluate for max and continue
+            if(node.pointer >= arr.length){
+                if(node.value > max) max = node.value;
+                //System.out.println("node.value: " + node.value);
+                continue;
+            }
+            //create, then add left child to queue
             node.left = new Node();
-            node.left.pointer = node.pointer + 1;
+            node.left.pointer = node.pointer +1;
             node.left.value = node.value;
-            //traverse left
-            leftValue = DFS(node.left, arr);
-
-        //if we are not at a leaf, create and traverse right
-            //create right
+            list.add(node.left);
+            //create, then add right child to queue
             node.right = new Node();
             node.right.pointer = node.pointer + 2;
             node.right.value = node.value + arr[node.pointer];
-            //traverse right
-            rightValue = DFS(node.right, arr);
+            list.add(node.right);
+        }
 
-        //if we are at a non-leaf, evalute and return the value
-        if (rightValue > max) max = rightValue;
-        if (leftValue > max) max = leftValue;
         return max;
     }
-
 
 
     private static final Scanner scanner = new Scanner(System.in);
