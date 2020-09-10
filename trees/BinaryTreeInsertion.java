@@ -1,21 +1,21 @@
 import java.util.*;
 import java.io.*;
 
-class Node {
-    Node left;
-    Node right;
-    int data;
-    
-    Node(int data) {
-        this.data = data;
-        left = null;
-        right = null;
-    }
-}
-
 class Solution {
-   
-  	public static void preOrder( Node root ) {
+
+	static class Node {
+	    Node left;
+	    Node right;
+	    int data;
+	    
+	    public Node(int data) {
+	        this.data = data;
+	        left = null;
+	        right = null;
+	    }
+	}
+	
+  	public static void preOrder(Node root ) {
       
     	if( root == null)
         	return;
