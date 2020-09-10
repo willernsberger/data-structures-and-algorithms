@@ -72,11 +72,4 @@ public class LinkedListAddTwoNumbers {
 		System.out.println(builder.toString());  // outputs in reverse order 58,642 -> 24685
 		
 	}
-	
-	
-	
-	
-	
-	
-	
 }
