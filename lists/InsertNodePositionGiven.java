@@ -83,5 +83,4 @@ public class InsertNodePositionGiven {
         }
         return head;
     }
-
-    private static final Scanner scanner = new Scanner(System.in);
+}
