@@ -1,9 +1,8 @@
 import java.io.*;
 import java.util.*;
 
-//CoderPro Coding Session Problem 22 Valid Binary Search Tree
+//CoderPro Coding Session 2 Valid Binary Search Tree
 //https://www.techseries.dev/products/coderpro/categories/1831147/posts/6231427
-//Solution implemented in Java
 //O(n) time complexity with respect to number of nodes in the tree...
 //because each node has to be evaluated
 //O(n) space complexity with respect to number of nodes in the tree...
