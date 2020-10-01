@@ -16,8 +16,6 @@ public class AVeryBigSum {
         return sum;
     }
 
-
-
     public static void main(String[] args) throws IOException {
         final Scanner scanner = new Scanner(System.in);
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
