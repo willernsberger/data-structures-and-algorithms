@@ -16,9 +16,10 @@ public class AVeryBigSum {
         return sum;
     }
 
-    private static final Scanner scanner = new Scanner(System.in);
+
 
     public static void main(String[] args) throws IOException {
+        final Scanner scanner = new Scanner(System.in);
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
         int arCount = scanner.nextInt();
