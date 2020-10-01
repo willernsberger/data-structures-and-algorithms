@@ -14,7 +14,6 @@ public class AVeryBigSum {
             sum += x;
         }
         return sum;
-
     }
 
     private static final Scanner scanner = new Scanner(System.in);
