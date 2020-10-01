@@ -1,4 +1,3 @@
-
 # complete the left rotation function
 # given an array and a value, rotate the array left by the given value
 
