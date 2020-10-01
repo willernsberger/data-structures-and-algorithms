@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-class Solution {
+class BinaryTreeInsertion {
 
 	static class Node {
 	    Node left;
